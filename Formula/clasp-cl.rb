@@ -14,16 +14,13 @@ class ClaspCl < Formula
   depends_on "fmt"
   depends_on "gmp"
   depends_on "llvm"
+  uses_from_macos "libffi"
 
   on_linux do
     depends_on "libbsd"
     depends_on "libffi"
   end
   
-  on_macos do
-    uses_from_macos "libffi"
-  end
-
   def install
     ENV.deparallelize
     system "./koga", "--bin-path=#{bin}", "--share-path=#{share}/clasp/", "--lib-path=#{lib}/clasp/"

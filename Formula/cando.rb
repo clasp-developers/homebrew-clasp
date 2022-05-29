@@ -16,16 +16,13 @@ class Cando < Formula
   depends_on "jupyterlab"
   depends_on "llvm"
   depends_on "netcdf"
+  uses_from_macos "libffi"
 
   on_linux do
     depends_on "libbsd"
     depends_on "libffi"
   end
   
-  on_macos do
-    uses_from_macos "libffi"
-  end
-
   def install
     ENV.deparallelize
     system "./koga", "--bin-path=#{bin}", "--share-path=#{share}/clasp/", "--lib-path=#{lib}/clasp/",
