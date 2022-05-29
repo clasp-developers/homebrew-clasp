@@ -20,9 +20,8 @@ class Cando < Formula
 
   on_linux do
     depends_on "libbsd"
-    depends_on "libffi"
   end
-  
+
   def install
     ENV.deparallelize
     system "./koga", "--bin-path=#{bin}", "--share-path=#{share}/clasp/", "--lib-path=#{lib}/clasp/",
