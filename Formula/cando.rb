@@ -5,6 +5,12 @@ class Cando < Formula
   version "1.0.0-220-g0f62839c7"
   license "GPL-2.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/clasp-developers/clasp"
+    rebuild 1
+    sha256 big_sur: "9db7d1849afc589f048d82c02317e95af16a8d4f780b569601da58d6b0b78fde"
+  end
+
   depends_on "boost" => :build
   depends_on "libunwind-headers" => :build
   depends_on "ninja" => :build
