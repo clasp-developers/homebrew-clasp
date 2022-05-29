@@ -23,6 +23,6 @@ class ClaspCl < Formula
   end
 
   test do
-    assert_match "clasp-boehmprecise-1.0.0", shell_output("#{bin}/clasp --version")
+    assert_match "clasp-boehmprecise", shell_output("#{bin}/clasp --version")
   end
 end
