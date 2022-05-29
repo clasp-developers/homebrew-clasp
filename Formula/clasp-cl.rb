@@ -6,6 +6,12 @@ class ClaspCl < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/clasp-developers/clasp.git"
 
+  bottle do
+    root_url "https://ghcr.io/v2/clasp-developers/clasp"
+    rebuild 1
+    sha256 big_sur: "7cd82262b040f7025aa53a7d86e284d21c169a3407ba476a6ca0e9caaaa84b73"
+  end
+
   depends_on "boost" => :build
   depends_on "libunwind-headers" => :build
   depends_on "ninja" => :build
