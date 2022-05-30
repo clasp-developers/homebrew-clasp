@@ -30,6 +30,8 @@ class Cando < Formula
   depends_on "netcdf"
   uses_from_macos "libffi"
 
+  conflicts_with "clasp-cl", because: "both install `clasp` binaries"
+
   def install
     ENV.deparallelize
     system "./koga", "--bin-path=#{bin}", "--share-path=#{share}/clasp/", "--lib-path=#{lib}/clasp/",

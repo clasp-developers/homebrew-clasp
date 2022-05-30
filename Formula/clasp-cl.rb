@@ -6,7 +6,9 @@ class ClaspCl < Formula
       revision: "3548cefd97bc090ca9db4c857db2218e35765372"
   version "1.0.0-230-g3548cefd9"
   license "GPL-2.0-or-later"
-  head "https://github.com/clasp-developers/clasp.git"
+  head "https://github.com/clasp-developers/clasp.git",
+       using:  :git,
+       branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/clasp-developers/clasp"
@@ -24,6 +26,8 @@ class ClaspCl < Formula
   depends_on "gmp"
   depends_on "llvm"
   uses_from_macos "libffi"
+
+  conflicts_with "cando", because: "both install `clasp` binaries"
 
   def install
     ENV.deparallelize
