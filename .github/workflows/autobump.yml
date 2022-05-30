@@ -29,7 +29,7 @@ jobs:
           branch: bump-clasp-cl
           base: main
           labels: bump
-  bump_clasp:
+  bump_cando:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
