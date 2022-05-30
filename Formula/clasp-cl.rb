@@ -1,7 +1,8 @@
 class ClaspCl < Formula
   desc "Common Lisp implementation that brings Common Lisp and C++ together"
   homepage "https://github.com/clasp-developers/clasp"
-  url "https://github.com/clasp-developers/clasp.git", using: :git,
+  url "https://github.com/clasp-developers/clasp.git", 
+    using: :git,
     revision: "0f62839c7e76b8951f0df9b3ee580d6902a8af04"
   version "1.0.0-220-g0f62839c7"
   license "GPL-2.0-or-later"
