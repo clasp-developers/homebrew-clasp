@@ -1,40 +1,43 @@
 name: Bump formulae on schedule or request
 
 on:
-  workflow_dispatch:
-    inputs:
-      formulae:
-        description: Custom list of formulae to livecheck and bump if outdated
-        required: false
   schedule:
-    # Every day at 5am
     - cron: '0 2 * * *'
-
-env:
-  HOMEBREW_FORCE_HOMEBREW_ON_LINUX: 1
-  FORMULAE: >
-    clasp
-    cando
 
 jobs:
   autobump:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/homebrew/ubuntu16.04:master
     steps:
-      - name: Set up Homebrew
-        id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@master
-
-      - name: Configure Git user
-        uses: Homebrew/actions/git-user-config@master
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
-          username: ${{ github.actor }}
-
-      - name: Bump formulae
-        uses: Homebrew/actions/bump-formulae@master
-        continue-on-error: true
+          repository: clasp-developers/clasp
+          path: clasp
+          fetch-depth: 0
+      - name: Update clasp-cl
+        run: |
+          ./bump-version clasp Formula/clasp-cl.rb
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v4
         with:
-          token: ${{ github.token }}
-          formulae: ${{ github.event.inputs.formulae || env.FORMULAE }}
+          commit-message: Bump clasp-cl version
+          title: Bump clasp-cl version
+          branch: bump-clasp-cl
+          base: main
+          labels: bump
+      - name: Update cando
+        run: |
+          ./bump-version clasp Formula/cando.rb
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: Bump cando version
+          title: Bump cando version
+          branch: bump-cando
+          base: main
+          labels: bump
 
