@@ -6,7 +6,7 @@ on:
     - cron: '0 2 * * *'
 
 jobs:
-  autobump:
+  bump_clasp:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -29,6 +29,17 @@ jobs:
           branch: bump-clasp-cl
           base: main
           labels: bump
+  bump_clasp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          repository: clasp-developers/clasp
+          path: clasp
+          fetch-depth: 0
       - name: Update cando
         run: |
           ./bump-version clasp Formula/cando.rb

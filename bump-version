@@ -3,8 +3,6 @@
 REVISION=$(cd $1 && git rev-parse HEAD)
 VERSION=$(cd $1 && git describe)
 
-git reset --hard
-git checkout main
 CURRENT_REVISION=$(sed -n "s/^.*revision: *\"\([^\"]*\)\".*$/\1/p" $2)
 
 if [ "$REVISION" != "$CURRENT_REVISION" ]; then
