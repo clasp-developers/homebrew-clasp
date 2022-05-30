@@ -20,8 +20,7 @@ jobs:
       - name: Update clasp-cl
         run: |
           ./bump-version clasp Formula/clasp-cl.rb
-      - name: Create Pull Request
-        id: cpr
+      - name: Create Pull Request for clasp-cl
         uses: peter-evans/create-pull-request@v4
         with:
           commit-message: Bump clasp-cl version
@@ -32,8 +31,7 @@ jobs:
       - name: Update cando
         run: |
           ./bump-version clasp Formula/cando.rb
-      - name: Create Pull Request
-        id: cpr
+      - name: Create Pull Request for cando
         uses: peter-evans/create-pull-request@v4
         with:
           commit-message: Bump cando version
