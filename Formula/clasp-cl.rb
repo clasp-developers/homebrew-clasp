@@ -24,7 +24,7 @@ class ClaspCl < Formula
   depends_on "sbcl" => :build
   depends_on "fmt"
   depends_on "gmp"
-  depends_on "llvm"
+  depends_on "llvm@13"
   uses_from_macos "libffi"
 
   conflicts_with "cando", because: "both install `clasp` binaries"
