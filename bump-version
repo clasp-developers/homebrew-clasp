@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 
-REVISION=$(cd $1 && git rev-parse HEAD)
-VERSION=$(cd $1 && git describe)
 
-CURRENT_REVISION=$(sed -n "s/^.*revision: *\"\([^\"]*\)\".*$/\1/p" $2)
+pushd $1
+./koga --update-version $3
+REVISION=$(sbcl --noinform --non-interactive --eval "(write-string (getf (with-open-file (s \"version.sexp\") (read s)) :commit-full))")
+VERSION=$(sbcl --noinform --non-interactive --eval "(write-string (getf (with-open-file (s \"version.sexp\") (read s)) :version))")
+popd
 
-if [ "$REVISION" != "$CURRENT_REVISION" ]; then
+CURRENT_VERSION=$(sed -n "s/^.*version *\"\([^\"]*\)\".*$/\1/p" $2)
+
+if [ "$VERSION" != "$CURRENT_VERSION" ]; then
   sed -i "s/\(revision: *\)\"[^\"]*\"/\1\"$REVISION\"/g" $2
   sed -i "s/\(version *\)\"[^\"]*\"/\1\"$VERSION\"/g" $2
 fi

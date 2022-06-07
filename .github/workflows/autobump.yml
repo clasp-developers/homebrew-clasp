@@ -19,6 +19,7 @@ jobs:
           fetch-depth: 0
       - name: Update clasp-cl
         run: |
+          brew install sbcl
           ./bump-version clasp Formula/clasp-cl.rb
       - name: Create Pull Request for clasp-cl
         uses: peter-evans/create-pull-request@v4
@@ -42,7 +43,8 @@ jobs:
           fetch-depth: 0
       - name: Update cando
         run: |
-          ./bump-version clasp Formula/cando.rb
+          brew install sbcl
+          ./bump-version clasp Formula/cando.rb --extensions=cando,seqan-clasp
       - name: Create Pull Request for cando
         uses: peter-evans/create-pull-request@v4
         with:
