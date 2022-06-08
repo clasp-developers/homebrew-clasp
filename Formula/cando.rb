@@ -35,7 +35,7 @@ class Cando < Formula
   def install
     ENV.deparallelize
     system "./koga", "--bin-path=#{bin}", "--share-path=#{share}/clasp/", "--lib-path=#{lib}/clasp/",
-      "--jupyter-path=#{share}/jupyter/", "--jupyter", "--extensions=cando,seqan-clasp"
+      "--extensions=cando,seqan-clasp"
     system "ninja", "-C", "build"
     system "ninja", "-C", "build", "install"
   end
