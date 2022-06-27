@@ -4,7 +4,7 @@ class Cando < Formula
   url "https://github.com/clasp-developers/clasp.git",
       using:    :git,
       revision: "ea5c624d93fe5b7c38dd9e90f64fd26d91f2c805"
-  version "1.0.0-313-gea5c624d9-g7825f630"
+  version "1.0.0-313-gea5c624d9-g5622c413"
   license "GPL-2.0-or-later"
   head "https://github.com/clasp-developers/clasp.git",
        using:  :git,
