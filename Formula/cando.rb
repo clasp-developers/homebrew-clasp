@@ -19,7 +19,6 @@ class Cando < Formula
 
   depends_on "boost" => :build
   depends_on "libunwind-headers" => :build
-  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "sbcl" => :build
   depends_on "expat"
@@ -28,6 +27,7 @@ class Cando < Formula
   depends_on "jupyterlab"
   depends_on "llvm@13"
   depends_on "netcdf"
+  depends_on "ninja"
   depends_on "zeromq"
   uses_from_macos "libffi"
 
