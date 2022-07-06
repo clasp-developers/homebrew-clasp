@@ -3,8 +3,8 @@ class Cando < Formula
   homepage "https://github.com/clasp-developers/clasp"
   url "https://github.com/clasp-developers/clasp.git",
       using:    :git,
-      revision: "d71a62487b2e9eb1922aa3602f5c5348268f87dc"
-  version "1.0.0-275-gd71a62487-gedef9eea"
+      revision: "3f3876e29ec84c0b8f0bb1a2027194cdfc44c60c"
+  version "1.0.0-318-g3f3876e29-g9e28f650"
   license "GPL-2.0-or-later"
   head "https://github.com/clasp-developers/clasp.git",
        using:  :git,
@@ -12,9 +12,9 @@ class Cando < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/clasp-developers/clasp"
-    sha256 monterey: "3a362de9816e956fa12c25eede6c6379a9628336816a20c45e191c89f1f509bb"
-    sha256 big_sur:  "c8178924e03cd5616eac032ebacd9462dcae227c369c6eb9924ecf37f459cd88"
-    sha256 catalina: "701623056435918fa2721450e3d6f564df948d7b3a1c4993e73674f9d57f8c92"
+    sha256 monterey: "6293dceb619f3d9ab5731457e345ad30fd7fe1c8b45a6bf662f931355c9345e1"
+    sha256 big_sur:  "18951a70646c6ec794c995786b7f1e0e998ed8b933b62352862a318ba71ec9ed"
+    sha256 catalina: "e285a6617789d788d34dcdbf718f84ad1a6f0072caff347a9e1baa01ece58a90"
   end
 
   depends_on "boost" => :build
@@ -28,6 +28,7 @@ class Cando < Formula
   depends_on "jupyterlab"
   depends_on "llvm@13"
   depends_on "netcdf"
+  depends_on "zeromq"
   uses_from_macos "libffi"
 
   conflicts_with "clasp-cl", because: "both install `clasp` binaries"

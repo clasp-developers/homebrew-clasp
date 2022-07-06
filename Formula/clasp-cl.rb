@@ -3,8 +3,8 @@ class ClaspCl < Formula
   homepage "https://github.com/clasp-developers/clasp"
   url "https://github.com/clasp-developers/clasp.git",
       using:    :git,
-      revision: "d71a62487b2e9eb1922aa3602f5c5348268f87dc"
-  version "1.0.0-275-gd71a62487"
+      revision: "3f3876e29ec84c0b8f0bb1a2027194cdfc44c60c"
+  version "1.0.0-318-g3f3876e29"
   license "GPL-2.0-or-later"
   head "https://github.com/clasp-developers/clasp.git",
        using:  :git,
@@ -12,9 +12,9 @@ class ClaspCl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/clasp-developers/clasp"
-    sha256 monterey: "b1397ba03913f73354b51be2fbceffd5703b7b506c1356b9ee6bb48b590c2365"
-    sha256 big_sur:  "a81b55587b2fa94a706b317401e52ce7094b76720f9a07243746a06796ca8ff8"
-    sha256 catalina: "f6a3920af692699f61759c23388c75d11d68a3057966a40f7c0bb1cdea881c56"
+    sha256 monterey: "2048434b8ac8d8479e83ce4fd53d4471435197d9d20bc2b5e21fd8f0e6247d4d"
+    sha256 big_sur:  "46fe6b0cdb90cc9dc76c003debba2fd99bd6339961d5aab61ebbf7a8e2124dcb"
+    sha256 catalina: "f9d87614b896ac6f1a142955b6a22e38dfb86cf70d5426d8935194bb8f457446"
   end
 
   depends_on "boost" => :build
