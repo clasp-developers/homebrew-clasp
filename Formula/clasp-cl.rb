@@ -31,7 +31,7 @@ class ClaspCl < Formula
 
   def install
     ENV.deparallelize
-    system "./koga", "--bin-path=#{bin}", "--share-path=#{share}/clasp/", "--lib-path=#{lib}/clasp/"
+    system "./koga", "--reproducible-build", "--bin-path=#{bin}", "--share-path=#{share}/clasp/", "--lib-path=#{lib}/clasp/"
     system "ninja", "-C", "build", "install"
   end
 

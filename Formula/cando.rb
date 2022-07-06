@@ -34,7 +34,7 @@ class Cando < Formula
 
   def install
     ENV.deparallelize
-    system "./koga", "--bin-path=#{bin}", "--share-path=#{share}/clasp/", "--lib-path=#{lib}/clasp/",
+    system "./koga", "--reproducible-build", "--bin-path=#{bin}", "--share-path=#{share}/clasp/", "--lib-path=#{lib}/clasp/",
       "--extensions=cando,seqan-clasp"
     system "ninja", "-C", "build"
     system "ninja", "-C", "build", "install"
