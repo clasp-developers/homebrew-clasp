@@ -5,7 +5,6 @@ class ClaspCl < Formula
       using:    :git,
       revision: "c6c8ae3c6fb79da717ca588054ef71adfef25375"
   version "1.0.0-529-gc6c8ae3c6"
-  revision 2
   license "GPL-2.0-or-later"
   head "https://github.com/clasp-developers/clasp.git",
        using:  :git,
