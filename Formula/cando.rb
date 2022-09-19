@@ -5,11 +5,11 @@ class Cando < Formula
       using:    :git,
       revision: "c6c8ae3c6fb79da717ca588054ef71adfef25375"
   version "1.0.0-529-gc6c8ae3c6-g7371ab99"
-  revision 3
   license "GPL-2.0-or-later"
   head "https://github.com/clasp-developers/clasp.git",
        using:  :git,
        branch: "main"
+  revision 3
 
   bottle do
     root_url "https://ghcr.io/v2/clasp-developers/clasp"
