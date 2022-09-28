@@ -17,6 +17,9 @@ jobs:
           repository: clasp-developers/clasp
           path: clasp
           fetch-depth: 0
+      - name: Update path
+        run: |
+          echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
       - name: Update clasp-cl
         run: |
           brew install sbcl
@@ -40,6 +43,9 @@ jobs:
           repository: clasp-developers/clasp
           path: clasp
           fetch-depth: 0
+      - name: Update path
+        run: |
+          echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
       - name: Update cando
         run: |
           brew install sbcl
