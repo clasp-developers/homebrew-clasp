@@ -6,7 +6,6 @@ class Cando < Formula
       revision: "c6c8ae3c6fb79da717ca588054ef71adfef25375"
   version "1.0.0-529-gc6c8ae3c6-g7371ab99"
   license "GPL-2.0-or-later"
-  revision 2
   head "https://github.com/clasp-developers/clasp.git",
        using:  :git,
        branch: "main"
