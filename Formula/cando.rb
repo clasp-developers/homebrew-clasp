@@ -20,6 +20,7 @@ class Cando < Formula
   depends_on "libunwind-headers" => :build
   depends_on "pkg-config" => :build
   depends_on "sbcl" => :build
+  depends_on arch: :x86_64
   depends_on "expat"
   depends_on "fmt"
   depends_on "gmp"
