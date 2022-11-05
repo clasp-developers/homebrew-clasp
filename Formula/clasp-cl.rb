@@ -33,7 +33,7 @@ class ClaspCl < Formula
     system "./koga", "--reproducible-build", "--cxxflags=-I#{Formula["boost"].include}/",
       "--bin-path=#{bin}", "--share-path=#{share}/clasp/", "--lib-path=#{lib}/clasp/",
       "--skip-sync=ansi-test,mps,cl-bench,cl-who"
-      
+
     system "ninja", "-C", "build", "install"
   end
 
