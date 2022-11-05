@@ -31,7 +31,8 @@ class ClaspCl < Formula
   def install
     ENV.deparallelize
     system "./koga", "--reproducible-build", "--bin-path=#{bin}", "--share-path=#{share}/clasp/",
-      "--lib-path=#{lib}/clasp/", "--skip-sync=ansi-test,mps,cl-bench,cl-who"
+      "--lib-path=#{lib}/clasp/", "--skip-sync=ansi-test,mps,cl-bench,cl-who",
+      "--cxx-flags=\"-I#{Formula["boost"].include}\""
     system "ninja", "-C", "build", "install"
   end
 
