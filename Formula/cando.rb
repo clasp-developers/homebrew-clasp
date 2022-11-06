@@ -37,6 +37,7 @@ class Cando < Formula
     ENV.deparallelize
     system "./koga", "--reproducible-build", "--bin-path=#{bin}", "--share-path=#{share}/clasp/",
       "--lib-path=#{lib}/clasp/", "--llvm-config=#{Formula["llvm@14"].opt_bin}/llvm-config",
+      "--pkg-config=#{Formula["pkg-config"].opt_bin}/pkg-config",
       "--cxxflags=-I#{Formula["boost"].include}/", "--cppflags=-I#{Formula["boost"].include}/",
       "--skip-sync=ansi-test,mps,cl-bench,cl-who", "--extensions=cando,seqan-clasp"
     system "ninja", "-C", "build"
