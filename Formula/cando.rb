@@ -6,9 +6,7 @@ class Cando < Formula
       revision: "219c77771d1f12bfb506b0b489979b7e882571a3"
   version "2.0.0-40-g219c77771-g33ee9b07"
   license "GPL-2.0-or-later"
-  head "https://github.com/clasp-developers/clasp.git",
-       using:  :git,
-       branch: "main"
+  head "https://github.com/clasp-developers/clasp.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/clasp-developers/clasp"
@@ -22,7 +20,6 @@ class Cando < Formula
   depends_on "pkg-config" => :build
   depends_on "sbcl" => :build
   depends_on arch: :x86_64
-  depends_on "expat"
   depends_on "fmt"
   depends_on "gmp"
   depends_on "jupyterlab"
@@ -30,6 +27,8 @@ class Cando < Formula
   depends_on "netcdf"
   depends_on "ninja"
   depends_on "zeromq"
+
+  uses_from_macos "expat"
 
   conflicts_with "clasp-cl", because: "both install `clasp` binaries"
 
@@ -45,6 +44,9 @@ class Cando < Formula
   end
 
   test do
-    assert_match "clasp-boehmprecise", shell_output("#{bin}/clasp --version")
+    (testpath/"simple.lisp").write <<~EOS
+      (write-line "Hello, world!")
+    EOS
+    assert_match "Hello, world!", shell_output("#{bin}/clasp --script #{testpath}/simple.lisp")
   end
 end

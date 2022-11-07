@@ -6,9 +6,7 @@ class ClaspCl < Formula
       revision: "219c77771d1f12bfb506b0b489979b7e882571a3"
   version "2.0.0-40-g219c77771"
   license "GPL-2.0-or-later"
-  head "https://github.com/clasp-developers/clasp.git",
-       using:  :git,
-       branch: "main"
+  head "https://github.com/clasp-developers/clasp.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/clasp-developers/clasp"
@@ -40,6 +38,9 @@ class ClaspCl < Formula
   end
 
   test do
-    assert_match "clasp-boehmprecise", shell_output("#{bin}/clasp --version")
+    (testpath/"simple.lisp").write <<~EOS
+      (write-line "Hello, world!")
+    EOS
+    assert_match "Hello, world!", shell_output("#{bin}/clasp --script #{testpath}/simple.lisp")
   end
 end
