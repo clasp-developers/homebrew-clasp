@@ -3,8 +3,8 @@ class ClaspCl < Formula
   homepage "https://github.com/clasp-developers/clasp"
   url "https://github.com/clasp-developers/clasp.git",
       using:    :git,
-      revision: "fbdd92b27d00190c0d2b33a1c307987090e77088"
-  version "2.0.0-100-gfbdd92b27"
+      revision: "ce81d67c5766e69df96dc3aee9f69387565cdc60"
+  version "2.0.0-106-gce81d67c5"
   license "GPL-2.0-or-later"
   head "https://github.com/clasp-developers/clasp.git", branch: "main"
 
@@ -31,7 +31,7 @@ class ClaspCl < Formula
     ENV.deparallelize
     system "./koga", "--reproducible-build", "--bin-path=#{bin}", "--share-path=#{share}/clasp/",
       "--lib-path=#{lib}/clasp/", "--llvm-config=#{Formula["llvm@14"].opt_bin}/llvm-config",
-      "--pkg-config=#{Formula["pkg-config"].opt_bin}/pkg-config",
+      "--pkg-config=#{Formula["pkg-config"].opt_bin}/pkg-config", "--broken-stdlib",
       "--cxxflags=-I#{Formula["boost"].include}/", "--cppflags=-I#{Formula["boost"].include}/",
       "--skip-sync=ansi-test,mps,cl-bench,cl-who"
     system "ninja", "-C", "build", "install"
