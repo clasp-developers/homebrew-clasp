@@ -5,9 +5,9 @@ class Cando < Formula
       using:    :git,
       revision: "ec9d2b05f1f10c6331a8fa815c65ff69a61729ab"
   version "2.0.0-109-gec9d2b05f-ga4471677"
+  revision 2
   license "GPL-2.0-or-later"
   head "https://github.com/clasp-developers/clasp.git", branch: "main"
-  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/clasp-developers/clasp"
