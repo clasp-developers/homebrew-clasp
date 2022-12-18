@@ -7,6 +7,7 @@ class Cando < Formula
   version "2.0.0-109-gec9d2b05f-ga4471677"
   license "GPL-2.0-or-later"
   head "https://github.com/clasp-developers/clasp.git", branch: "main"
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/clasp-developers/clasp"
