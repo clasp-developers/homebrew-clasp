@@ -23,15 +23,15 @@ class ClaspCl < Formula
   depends_on arch: :x86_64
   depends_on "fmt"
   depends_on "gmp"
-  depends_on "llvm@14"
+  depends_on "llvm@15"
 
   conflicts_with "cando", because: "both install `clasp` binaries"
 
   def install
     ENV.deparallelize
     system "./koga", "--reproducible-build", "--bin-path=#{bin}", "--share-path=#{share}/clasp/",
-      "--lib-path=#{lib}/clasp/", "--llvm-config=#{Formula["llvm@14"].opt_bin}/llvm-config",
-      "--pkg-config=#{Formula["pkg-config"].opt_bin}/pkg-config", "--broken-stdlib",
+      "--lib-path=#{lib}/clasp/", "--llvm-config=#{Formula["llvm@15"].opt_bin}/llvm-config",
+      "--pkg-config=#{Formula["pkg-config"].opt_bin}/pkg-config",
       "--cxxflags=-I#{Formula["boost"].include}/", "--cppflags=-I#{Formula["boost"].include}/",
       "--skip-sync=ansi-test,mps,cl-bench,cl-who"
     system "ninja", "-C", "build", "install"
