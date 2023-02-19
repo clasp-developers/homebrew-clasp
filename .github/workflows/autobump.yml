@@ -7,7 +7,7 @@ on:
 
 jobs:
   bump_clasp:
-    runs-on: macos-12
+    runs-on: Ubuntum-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
