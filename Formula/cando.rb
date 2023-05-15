@@ -10,8 +10,8 @@ class Cando < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/clasp-developers/clasp"
-    sha256 monterey: "ff69da9604c1eb4f4d9dca69e875424a00fbf2487fb88bf874c44c0246b6d633"
-    sha256 big_sur:  "6823ad94979667ba9fe4af8fcc7b80fdb3590233fdb0fa1bebd52cc352c1f6df"
+    sha256 monterey: "48628488d864b2eebd532193f6ea9db0967200ef0fbe610347fb945c42347172"
+    sha256 big_sur:  "ba2d4ebb02b7811020d2942a4cd0006a06bbfa75dca50bfcb2d315ebdc4a15d7"
   end
 
   depends_on "boost" => :build
