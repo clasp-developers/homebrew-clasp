@@ -3,8 +3,8 @@ class ClaspCl < Formula
   homepage "https://github.com/clasp-developers/clasp"
   url "https://github.com/clasp-developers/clasp.git",
       using:    :git,
-      revision: "d5637675b846cd614d2553f319f2b8a03e4b4914"
-  version "2.3.0-38-gd5637675b"
+      revision: "8072c210da30c5882f72f7013c0b45dc2a626720"
+  version "2.3.0-42-g8072c210d"
   license "GPL-2.0-or-later"
   head "https://github.com/clasp-developers/clasp.git", branch: "main"
 
