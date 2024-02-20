@@ -25,7 +25,7 @@ jobs:
           brew install sbcl
           ./bump-version clasp Formula/clasp-cl.rb
       - name: Create Pull Request for clasp-cl
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.REPO_TOKEN }}
           commit-message: Build clasp-cl
@@ -51,7 +51,7 @@ jobs:
           brew install sbcl
           ./bump-version clasp Formula/cando.rb --extensions=cando,seqan-clasp
       - name: Create Pull Request for cando
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.REPO_TOKEN }}
           commit-message: Build cando
