@@ -10,7 +10,7 @@ class ClaspCl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/clasp-developers/clasp"
-    sha256 monterey: "d361b1cf2be1f0f73ad37f43db94ef7b47188a3f089da6fded1840570ac50d29"
+    sha256 monterey: "d5c81d8fb5b084d7d0ea6259eacf570d27012a3095bff3354d1de87c0444066b"
   end
 
   depends_on "boost" => :build
