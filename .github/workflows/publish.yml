@@ -1,3 +1,4 @@
+# shellcheck disable=all
 name: brew pr-pull
 on:
   pull_request_target:

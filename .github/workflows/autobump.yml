@@ -1,3 +1,4 @@
+# shellcheck disable=all
 name: Bump formulae on schedule or request
 
 on:
