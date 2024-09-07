@@ -36,7 +36,14 @@ class Cando < Formula
       "--lib-path=#{lib}/clasp/", "--llvm-config=#{Formula["llvm@17"].opt_bin}/llvm-config",
       "--pkg-config=#{Formula["pkg-config"].opt_bin}/pkg-config",
       "--cxxflags=-I#{Formula["boost"].include}/", "--cppflags=-I#{Formula["boost"].include}/",
-      "--skip-sync=ansi-test,mps,cl-bench,cl-who", "--extensions=cando,seqan-clasp"
+      "--skip-sync=ansi-test,mps,cl-bench,cl-who",
+      "--extensions=cando,seqan-clasp" if Hardware::CPU.intel?
+    system "./koga", "--reproducible-build", "--bin-path=#{bin}", "--share-path=#{share}/clasp/",
+      "--lib-path=#{lib}/clasp/", "--llvm-config=#{Formula["llvm@17"].opt_bin}/llvm-config",
+      "--pkg-config=#{Formula["pkg-config"].opt_bin}/pkg-config",
+      "--cxxflags=-I#{Formula["boost"].include}/", "--cppflags=-I#{Formula["boost"].include}/",
+      "--skip-sync=ansi-test,mps,cl-bench,cl-who", "--extensions=cando,seqan-clasp",
+      "--build-mode=bytecode" if Hardware::CPU.arm?
     system "ninja", "-C", "build"
     system "ninja", "-C", "build", "install"
   end
