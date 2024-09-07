@@ -18,10 +18,9 @@ class ClaspCl < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "sbcl" => :build
-  depends_on arch: :x86_64
   depends_on "fmt"
   depends_on "gmp"
-  depends_on "llvm@17"
+  depends_on "llvm@18"
 
   conflicts_with "cando", because: "both install `clasp` binaries"
 
