@@ -21,6 +21,7 @@ class Cando < Formula
   depends_on "fmt"
   depends_on "gmp"
   depends_on "jupyterlab"
+  depends_on "lld"
   depends_on "llvm@19"
   depends_on "netcdf"
   depends_on "ninja"

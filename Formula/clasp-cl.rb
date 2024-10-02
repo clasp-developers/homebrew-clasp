@@ -21,6 +21,7 @@ class ClaspCl < Formula
   depends_on "sbcl" => :build
   depends_on "fmt"
   depends_on "gmp"
+  depends_on "lld"
   depends_on "llvm@19"
 
   conflicts_with "cando", because: "both install `clasp` binaries"
