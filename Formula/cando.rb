@@ -56,6 +56,6 @@ class Cando < Formula
     (testpath/"simple.lisp").write <<~EOS
       (write-line "Hello, world!")
     EOS
-    assert_match "Hello, world!", shell_output("#{bin}/clasp --script #{testpath}/simple.lisp")
+    assert_match "Hello, world!", shell_output("DYLD_LIBRARY_PATH=#{lib} #{bin}/clasp --script #{testpath}/simple.lisp")
   end
 end
