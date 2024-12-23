@@ -33,21 +33,12 @@ class Cando < Formula
 
   def install
     ENV.deparallelize
-    if Hardware::CPU.arm?
-      system "./koga", "--reproducible-build", "--bin-path=#{bin}", "--share-path=#{share}/clasp/",
-        "--lib-path=#{lib}/clasp/", "--llvm-config=#{Formula["llvm@19"].opt_bin}/llvm-config",
-        "--pkg-config=#{Formula["pkg-config"].opt_bin}/pkg-config", "--dylib-path=#{lib}/",
-        "--cxxflags=-I#{Formula["boost"].include}/", "--cppflags=-I#{Formula["boost"].include}/",
-        "--skip-sync=ansi-test,mps,cl-bench,cl-who", "--extensions=cando",
-        "--build-mode=bytecode", "--pkgconfig-path=#{lib}/pkgconfig/"
-    else
-      system "./koga", "--reproducible-build", "--bin-path=#{bin}", "--share-path=#{share}/clasp/",
-        "--lib-path=#{lib}/clasp/", "--llvm-config=#{Formula["llvm@19"].opt_bin}/llvm-config",
-        "--pkg-config=#{Formula["pkg-config"].opt_bin}/pkg-config", "--dylib-path=#{lib}/",
-        "--cxxflags=-I#{Formula["boost"].include}/", "--cppflags=-I#{Formula["boost"].include}/",
-        "--skip-sync=ansi-test,mps,cl-bench,cl-who", "--extensions=cando",
-        "--pkgconfig-path=#{lib}/pkgconfig/"
-    end
+    system "./koga", "--reproducible-build", "--bin-path=#{bin}", "--share-path=#{share}/clasp/",
+      "--lib-path=#{lib}/clasp/", "--llvm-config=#{Formula["llvm@19"].opt_bin}/llvm-config",
+      "--pkg-config=#{Formula["pkg-config"].opt_bin}/pkg-config", "--dylib-path=#{lib}/",
+      "--cxxflags=-I#{Formula["boost"].include}/", "--cppflags=-I#{Formula["boost"].include}/",
+      "--skip-sync=ansi-test,mps,cl-bench,cl-who", "--extensions=cando",
+      "--pkgconfig-path=#{lib}/pkgconfig/"
     system "ninja", "-C", "build"
     system "ninja", "-C", "build", "install"
   end
