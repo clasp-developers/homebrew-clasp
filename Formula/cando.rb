@@ -38,7 +38,7 @@ class Cando < Formula
       "--pkg-config=#{Formula["pkg-config"].opt_bin}/pkg-config", "--dylib-path=#{lib}/",
       "--cxxflags=-I#{Formula["boost"].include}/", "--cppflags=-I#{Formula["boost"].include}/",
       "--skip-sync=ansi-test,mps,cl-bench,cl-who", "--extensions=cando",
-      "--pkgconfig-path=#{lib}/pkgconfig/"
+      "--pkgconfig-path=#{lib}/pkgconfig/", "--no-compile-file-parallel"
     system "ninja", "-C", "build"
     system "ninja", "-C", "build", "install"
   end
