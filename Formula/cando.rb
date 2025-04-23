@@ -3,8 +3,8 @@ class Cando < Formula
   homepage "https://github.com/clasp-developers/clasp"
   url "https://github.com/clasp-developers/clasp.git",
       using:    :git,
-      revision: "165771a5abfc44dc4bfc2332c56d07d1e2c83f0d"
-  version "2.7.0-174-g165771a5a-gec1dda7e"
+      revision: "b6c6a9f6081a2677723ef469b6bf0a16d1a944b4"
+  version "2.7.0-181-gb6c6a9f60-gec1dda7e"
   license "GPL-2.0-or-later"
   head "https://github.com/clasp-developers/clasp.git", branch: "main"
 
