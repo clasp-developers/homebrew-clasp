@@ -18,6 +18,7 @@ class Cando < Formula
   depends_on "libunwind-headers" => :build
   depends_on "pkg-config" => :build
   depends_on "sbcl" => :build
+  depends_on "expat"
   depends_on "fmt"
   depends_on "gmp"
   depends_on "jupyterlab"
@@ -26,8 +27,6 @@ class Cando < Formula
   depends_on "netcdf"
   depends_on "ninja"
   depends_on "zeromq"
-
-  uses_from_macos "expat"
 
   conflicts_with "clasp-cl", because: "both install `clasp` binaries"
 
